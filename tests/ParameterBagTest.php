@@ -42,6 +42,19 @@ class ParameterBagTest extends PHPUnit_Framework_TestCase
     /**
      * @return void
      *
+     * @expectedException \WideFocus\Parameters\InvalidParameterException
+     *
+     * @covers ::get
+     */
+    public function testGetException()
+    {
+        $bag = new ParameterBag(['foo' => 'Foo']);
+        $bag->get('bar');
+    }
+
+    /**
+     * @return void
+     *
      * @covers ::with
      */
     public function testWith()
