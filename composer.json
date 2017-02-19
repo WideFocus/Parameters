@@ -1,14 +1,14 @@
 {
     "name": "widefocus/parameters",
-    "description": "A parameter ba implementation.",
+    "description": "A parameter bag implementation.",
     "type": "library",
-    "license": "proprietary",
+    "license": "MIT",
     "prefer-stable": true,
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Ashoka de Wit",
-            "email": "contact@widefocus.net"
+            "email": "ashoka@widefocus.net"
         }
     ],
     "require": {
