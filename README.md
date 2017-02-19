@@ -1,5 +1,9 @@
 # WideFocus Parameters
 
+[![Build Status](https://travis-ci.org/WideFocus/Parameters.svg?branch=master)](https://travis-ci.org/WideFocus/Parameters)
+[![Latest Stable Version](https://poser.pugx.org/widefocus/parameters/v/stable)](https://packagist.org/packages/widefocus/parameters)
+[![License](https://poser.pugx.org/widefocus/parameters/license)](https://packagist.org/packages/widefocus/parameters)
+
 This package contains an implementation of a parameter bag.
 
 ## Installation
