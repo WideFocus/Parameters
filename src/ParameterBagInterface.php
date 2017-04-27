@@ -23,12 +23,11 @@ interface ParameterBagInterface extends IteratorAggregate
      * Get a parameter.
      *
      * @param string $name
+     * @param mixed  $default
      *
      * @return mixed
-     *
-     * @throws InvalidParameterException When the parameter does not exist.
      */
-    public function get(string $name);
+    public function get(string $name, $default = null);
 
     /**
      * Get an instance with a value.

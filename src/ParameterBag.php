@@ -42,17 +42,14 @@ class ParameterBag implements ParameterBagInterface
      * Get a parameter.
      *
      * @param string $name
+     * @param mixed  $default
      *
      * @return mixed
-     *
-     * @throws InvalidParameterException When the parameter does not exist.
      */
-    public function get(string $name)
+    public function get(string $name, $default = null)
     {
         if (!array_key_exists($name, $this->data)) {
-            throw new InvalidParameterException(
-                sprintf('Parameter %s does not exist', $name)
-            );
+            return $default;
         }
         return $this->data[$name];
     }
