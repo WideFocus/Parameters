@@ -13,4 +13,18 @@ use InvalidArgumentException;
  */
 class InvalidSubjectException extends InvalidArgumentException
 {
+    /**
+     * Constructor.
+     *
+     * @param mixed $subject
+     */
+    public function __construct($subject)
+    {
+        parent::__construct(
+            sprintf(
+                'Expected an object but got %s.',
+                gettype($subject)
+            )
+        );
+    }
 }

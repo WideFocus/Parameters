@@ -18,16 +18,13 @@ class ParameterSetter implements ParameterSetterInterface
      * @param ParameterBagInterface $parameters
      *
      * @return void
+     *
+     * @throws InvalidSubjectException When the subject is not an object.
      */
     public function setParameters($subject, ParameterBagInterface $parameters)
     {
         if (!is_object($subject)) {
-            throw new InvalidSubjectException(
-                sprintf(
-                    'Expected an object but got %s.',
-                    gettype($subject)
-                )
-            );
+            throw new InvalidSubjectException($subject);
         }
 
         if ($subject instanceof ParameterBagAwareInterface) {
@@ -45,8 +42,10 @@ class ParameterSetter implements ParameterSetterInterface
      * @param mixed  $subject
      * @param string $key
      * @param mixed  $value
+     *
+     * @return void
      */
-    private function setParameter($subject, $key, $value)
+    private function setParameter($subject, string $key, $value)
     {
         $setter = 'set' . $this->snakeToCamelCase($key);
         if (is_callable([$subject, $setter])) {
